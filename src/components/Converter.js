@@ -8,20 +8,32 @@ const Converter = () => {
   
    
     const handleFahrenheitChange = (e) => {
+      if(e.target.value){
       const value = e.target.value;
       setFahrenheit(value);
      
       const convertedCelsius = (value - 32) * (5/9);
-      setCelsius(convertedCelsius.toFixed(2));
+      setCelsius(convertedCelsius);
+      }
+      else{
+        setCelsius("")
+        setFahrenheit("")
+      }
     };
   
     
     const handleCelsiusChange = (e) => {
+      if(e.target.value){
       const value = e.target.value;
       setCelsius(value);
      
       const convertedFahrenheit = (value * (9/5)) + 32;
-      setFahrenheit(convertedFahrenheit.toFixed(2));
+      setFahrenheit(convertedFahrenheit);
+      }
+      else{
+        setFahrenheit("")
+        setCelsius("")
+      }
     };
 
   return (
